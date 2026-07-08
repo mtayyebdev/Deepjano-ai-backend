@@ -1,0 +1,16 @@
+export const ENV = {
+  PORT: process.env.PORT,
+  DB_URL: process.env.DB_URL,
+  JWT_SECRET: process.env.JWT_SECRET,
+  JWT_EXPIRESIN: 15 * 24 * 60 * 60 * 1000,
+  TOKEN_NAME: "DEEPJANOAI_TK",
+  CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+  CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+  CLOUDINARY_SECRET_KEY: process.env.CLOUDINARY_SECRET_KEY,
+  EMAIL_USER: process.env.EMAIL_USER,
+  EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+  NODE_ENV: process.env.NODE_ENV || "development",
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+  OPENAI_BASE_URL: process.env.OPENAI_BASE_URL,
+  CLIENT_URL: process.env.CLIENT_URL,
+};
