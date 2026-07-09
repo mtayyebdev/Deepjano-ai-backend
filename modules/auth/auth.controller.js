@@ -45,7 +45,7 @@ const loginController = TryCatchHandler(async (req, res) => {
   res.cookie(ENV.TOKEN_NAME, token, {
     httpOnly: true,
     secure: ENV.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: ENV.NODE_ENV === "production" ? "none" : "lax",
     maxAge: ENV.JWT_EXPIRESIN,
   });
 
