@@ -59,7 +59,7 @@ const logoutController = TryCatchHandler(async (req, res) => {
   res.clearCookie(ENV.TOKEN_NAME, {
     httpOnly: true,
     secure: ENV.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: ENV.NODE_ENV === "production" ? "none" : "lax",
   });
 
   return res.status(200).json({
@@ -132,7 +132,7 @@ const deleteUserController = TryCatchHandler(async (req, res) => {
   res.clearCookie(ENV.TOKEN_NAME, {
     httpOnly: true,
     secure: ENV.NODE_ENV === "production",
-    sameSite: "strict",
+    sameSite: ENV.NODE_ENV === "production" ? "none" : "lax",
   });
 
   return res.status(200).json({
